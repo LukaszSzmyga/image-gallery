@@ -9,16 +9,19 @@ function addImages() {
         var newImage = document.createElement('img');
         newImage.setAttribute('src', 'images/pic' + i + '.jpg');
         thumbBar.appendChild(newImage);
-        newImage.onclick = function(e) {
-            var imgSrc = e.target.getAttribute('src');
-            displayImage(imgSrc);
-            }
         }
 }
 
-function displayImage(imgSrc) {
-  displayedImage.setAttribute('src', imgSrc);
+var imageClickHandler = function(event) {
+    var clickedImage = event.target.getAttribute('src');
+    displayImage(clickedImage);
 }
+
+function displayImage (clickedImage) {
+    displayedImage.setAttribute('src', clickedImage);
+}
+
+thumbBar.addEventListener('click', imageClickHandler);
 
 function registerListeners() {
   btn.onclick = function() {
