@@ -21,8 +21,6 @@ function displayImage (clickedImage) {
     displayedImage.setAttribute('src', clickedImage);
 }
 
-thumbBar.addEventListener('click', imageClickHandler);
-
 function registerListeners() {
   btn.onclick = function() {
     var btnClass = btn.getAttribute('class'); 
@@ -35,7 +33,8 @@ function registerListeners() {
         btn.textContent = 'Darken';
         overlay.style.backgroundColor = 'rgba(0,0,0,0)';
         }
-  }
+  } 
+  thumbBar.addEventListener('click', imageClickHandler);
 }
 
 addImages();
